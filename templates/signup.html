@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="signup.css" rel="stylesheet" type="text/css">
+    <link href="{{url_for('static', filename='signup.css') }}" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -37,7 +37,6 @@
     <script>
         // Get the modal
         var modal = document.getElementById('id01');
-
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
             if (event.target == modal) {

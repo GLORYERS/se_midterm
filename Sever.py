@@ -1,6 +1,43 @@
 import socket
 import select
-import flask
+from flask import Flask
+from flask import render_template
+from flask import Flask, redirect, url_for
+from flask import request
+
+app = Flask(__name__)
+
+
+@app.route('/')
+def home():
+    return render_template('login.html')
+
+
+@app.route('/hh')
+def homeoo():
+    return render_template('signup.html')
+
+
+@app.route('/okok', methods=['POST'])
+def homeottto():
+    return request.form['Username']
+
+
+@app.route('/okok', methods=['POST'])
+def homeotttoo():
+    return request.form['Password']
+
+
+@app.route('/demo')
+def demo_url_for():
+    return redirect(url_for('signup.html'))
+
+
+print('username')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
 
 HEADER_LENGTH = 10
 Host = "127.0.0.1"
