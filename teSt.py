@@ -7,12 +7,11 @@ from flask import request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
-usser = []
-
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+data = "db.db"
 
 
 class chat1(db.Model):
@@ -43,7 +42,7 @@ def homeoo():
     return render_template('signup.html')
 
 
-@app.route('/room')
+@app.route('/room', methods=['GET', 'POST'])
 def homeroo():
     return render_template('chatroom.html')
 
