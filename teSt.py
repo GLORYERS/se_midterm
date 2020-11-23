@@ -52,7 +52,7 @@ def homeroo():
 def homeottto():
     u = request.form['Username']
     p = request.form['Password']
-    return u+p
+    return redirect('/room')
 
 
 @app.route('/sign', methods=['POST'])
