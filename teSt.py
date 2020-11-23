@@ -7,6 +7,8 @@ from flask import request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
+usser = []
+
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -36,24 +38,29 @@ def home():
     return render_template('login.html')
 
 
-@app.route('/hh')
+@app.route('/up')
 def homeoo():
     return render_template('signup.html')
 
 
-@app.route('/okok', methods=['POST'])
+@app.route('/room')
+def homeroo():
+    return render_template('chatroom.html')
+
+
+@app.route('/log', methods=['POST'])
 def homeottto():
     u = request.form['Username']
     p = request.form['Password']
+    return u+p
 
-    return u + p
 
-
-@app.route('/okok2', methods=['POST'])
+@app.route('/sign', methods=['POST'])
 def homeotttoo():
     n = request.form['Name']
     w = request.form['pwd']
-    ch1 = user(Name=n, pwd=w)
+
+    ch1 = user(name=n, pwd=w)
     db.session.add(ch1)
     db.session.commit()
     return redirect('/')
