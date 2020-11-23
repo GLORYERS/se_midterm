@@ -4,8 +4,33 @@ from flask import Flask
 from flask import render_template
 from flask import Flask, redirect, url_for
 from flask import request
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
+
+usser = []
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
+
+
+class chat1(db.Model):
+    name = db.Column(db.Text, primary_key=True, nullable=False, unique=True)
+    message = db.Column(db.Text, nullable=False)
+    time = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+
+    def __repr__(self):
+        return 'name:{}, message:{}, time:{}'.format(
+            self.name,
+            self.message,
+            self.time
+        )
+
+
+class user(db.Model):
+    name = db.Column(db.Text, primary_key=True, nullable=False, unique=True)
+    pwd = db.Column(db.Text, nullable=False)
 
 
 @app.route('/')
@@ -13,19 +38,32 @@ def home():
     return render_template('login.html')
 
 
-@app.route('/hh')
+@app.route('/up')
 def homeoo():
     return render_template('signup.html')
 
 
-@app.route('/okok', methods=['POST'])
+@app.route('/room')
+def homeroo():
+    return render_template('chatroom.html')
+
+
+@app.route('/log', methods=['POST'])
 def homeottto():
-    return request.form['Username']
+    u = request.form['Username']
+    p = request.form['Password']
+    return redirect('/room')
 
 
-@app.route('/okok', methods=['POST'])
+@app.route('/sign', methods=['POST'])
 def homeotttoo():
-    return request.form['Password']
+    n = request.form['Name']
+    w = request.form['pwd']
+
+    ch1 = user(name=n, pwd=w)
+    db.session.add(ch1)
+    db.session.commit()
+    return redirect('/')
 
 
 @app.route('/demo')
@@ -33,29 +71,22 @@ def demo_url_for():
     return redirect(url_for('signup.html'))
 
 
-print('username')
-
 if __name__ == '__main__':
     app.run(debug=True)
-
 
 HEADER_LENGTH = 10
 Host = "127.0.0.1"
 # Server IP
 Port = 8080
-# 埠
+
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# 建立socket物件
 server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-# value設為1表示將SO_REUSEADDR標記為True,OS的Server socket 被關閉或程序終止釋放該Server的埠
 server_socket.bind((Host, Port))
-# 為Server要求一個port
 server_socket.listen()
-# 監聽(等待中的)連線
 sockets_list = [server_socket]
 clients = {}
-print(f'Listening for connections on {Host}:{Port}...')
+# print(f'Listening for connections on {Host}:{Port}...')
 
 
 def receive_message(client_socket):
@@ -92,8 +123,8 @@ while True:
 
             sockets_list.append(client_socket)
             clients[client_socket] = user
-            print('Accepted new connection from {}:{}, username: {}'.format(
-                *client_address, user['data'].decode('utf-8')))
+            # print('Accepted new connection from {}:{}, username: {}'.format(
+            #     *client_address, user['data'].decode('utf-8')))
 
         else:
 
@@ -107,8 +138,8 @@ while True:
                 continue
 
             user = clients[notified_socket]
-            print(
-                f'Received message from {user["data"].decode("utf-8")}: {message["data"].decode("utf-8")}')
+            # print(
+            #     f'Received message from {user["data"].decode("utf-8")}: {message["data"].decode("utf-8")}')
 
             for client_socket in clients:
 
