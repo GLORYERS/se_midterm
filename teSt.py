@@ -152,6 +152,6 @@ while True:
         del clients[notified_socket]
 
 
-# 用過的名字會跑出error頁面
+# signup用過的名字會跑出error頁面
 # 資料庫資料比對
 # 訊息刷新網頁
