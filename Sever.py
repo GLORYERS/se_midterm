@@ -29,8 +29,9 @@ class chat1(db.Model):
 
 
 class user(db.Model):
-    name = db.Column(db.Text, primary_key=True, nullable=False, unique=True)
-    pwd = db.Column(db.Text, nullable=False)
+    username = db.Column(db.Text, primary_key=True,
+                         nullable=False, unique=True)
+    password = db.Column(db.Text, nullable=False)
 
 
 @app.route('/')
@@ -60,7 +61,7 @@ def homeotttoo():
     n = request.form['Name']
     w = request.form['pwd']
 
-    ch1 = user(name=n, pwd=w)
+    ch1 = user(username=n, password=w)
     db.session.add(ch1)
     db.session.commit()
     return redirect('/')

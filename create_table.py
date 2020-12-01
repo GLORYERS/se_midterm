@@ -13,9 +13,9 @@ chat1 = Table('chat1', metadata,
               )
 
 user = Table('user', metadata,
-             Column('name', Text, primary_key=True,
+             Column('username', Text, primary_key=True,
                     nullable=False, unique=True),
-             Column('pwd', Text, nullable=False)
+             Column('password', Text, nullable=False)
              )
 
 metadata.create_all(engine)

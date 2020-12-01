@@ -4,14 +4,21 @@ from flask import Flask
 from flask import render_template
 from flask import Flask, redirect, url_for
 from flask import request
+from flask_login import UserMixin
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+from sqlalchemy.exc import IntegrityError
+from flask_login import UserMixin
+from flask_login import LoginManager
 
 app = Flask(__name__)
+app.secret_key = 'abcccde'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 data = "db.db"
+login_manager = LoginManager()
+login_manager.init_app(app)
 
 
 class chat1(db.Model):
@@ -28,8 +35,47 @@ class chat1(db.Model):
 
 
 class user(db.Model):
-    name = db.Column(db.Text, primary_key=True, nullable=False, unique=True)
-    pwd = db.Column(db.Text, nullable=False)
+    username = db.Column(db.Text, primary_key=True,
+                         nullable=False, unique=True)
+    password = db.Column(db.Text, nullable=False)
+
+
+# class User(UserMixin):
+#     pass
+
+
+@login_manager.user_loader
+def user_loader(cls, username, password):
+    user = cls.query.filter_by(username=username).first()
+    username = request.form['username']
+
+    if request.form['password'] == users[username]['password']:
+        if user.check_password(password):
+            return user
+        else:
+            return None
+    return None
+
+
+# def request_loader(request):
+#     ab = request.form.get('user_id')
+#     if ab not in users:
+#         return
+#     user = User()
+#     user.id = ab
+#     user.is_authenticated = request.form['password'] == users[ab]['password']
+#     return user
+
+# email = request.form['email']
+#     if request.form['password'] == users[email]['password']:
+#         #  實作User類別
+#         user = User()
+#         #  設置id就是email
+#         user.id = email
+#         #  這邊，透過login_user來記錄user_id，如下了解程式碼的login_user說明。
+#         login_user(user)
+#         #  登入成功，轉址
+#         return redirect(url_for('protected'))
 
 
 @app.route('/')
@@ -59,9 +105,13 @@ def homeotttoo():
     n = request.form['Name']
     w = request.form['pwd']
 
-    ch1 = user(name=n, pwd=w)
-    db.session.add(ch1)
-    db.session.commit()
+    ch1 = user(username=n, password=w)
+    try:
+        db.session.add(ch1)
+        db.session.commit()
+    except IntegrityError:
+        db.session.rollback()
+
     return redirect('/')
 
 
@@ -152,6 +202,5 @@ while True:
         del clients[notified_socket]
 
 
-# signup用過的名字會跑出error頁面
 # 資料庫資料比對
 # 訊息刷新網頁
