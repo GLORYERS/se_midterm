@@ -46,7 +46,6 @@ def homeoo():
 
 @app.route('/room')
 def homeroo():
-
     return render_template('chatroom.html')
 
 
