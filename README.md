@@ -5,10 +5,10 @@
 
 測試小幫手一枚
 
-## 登入畫面(http://127.0.0.1:5000)
+## 登入畫面 (http://127.0.0.1:5000)
 ![image](./image/login.jpg)
 
-## 註冊畫面(http://127.0.0.1:5000/up)
+## 註冊畫面 (http://127.0.0.1:5000/up)
 ![image](./image/signup.jpg)
 
 ### 資料庫
@@ -16,12 +16,12 @@
 
 ![image](./image/db.jpg)
 
-## 聊天室(http://127.0.0.1:5000/room)
+## 聊天室 (http://127.0.0.1:5000/room)
 ![image](./image/message.jpg)
 ![image](./image/message2.jpg)
 ＊尚未完成網頁端的聊天室,期望完成能訊息刷新的畫面
 
-## 專案畫面
+## 專案連結&畫面
 [GLORYERS](https://github.com/GLORYERS/se_midterm)
 
 ![image](./image/poject.jpg)
@@ -30,6 +30,7 @@
 *client
 
 ![image](./image/c.jpg)
+
 *sever
 
 ![image](./image/s.jpg)
