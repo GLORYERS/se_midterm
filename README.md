@@ -16,6 +16,7 @@
 
 ## 資料庫
 ＊註冊的資料會傳入資料庫中
+
 ![image](./image/db.jpg)
 
 ## 聊天室
@@ -30,7 +31,7 @@
 ![image](./image/c.jpg)
 ![image](./image/s.jpg)
 
-## 分配工作
+## 工作分配
 除測試有測試小幫手,其餘皆一人完成
 
 ## 測試
@@ -53,3 +54,7 @@ Test file: [conftest.py](https://github.com/GLORYERS/se_midterm/blob/main/confte
 5.https://clay-atlas.com/blog/2019/10/15/python-chinese-tutorial-socket-tcp-ip/
 
 6.https://codertw.com/程式語言/374180/
+
+7.https://www.w3schools.com/howto/howto_css_social_login.asp
+
+8.https://www.youtube.com/watch?v=ZvU57lTnNgo
