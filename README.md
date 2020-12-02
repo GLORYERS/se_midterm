@@ -34,6 +34,12 @@
 除測試有測試小幫手,其餘皆一人完成
 
 ## 測試
+Testing using pytest
+
+Test file: [conftest.py](https://github.com/GLORYERS/se_midterm/blob/main/conftest.py), [test_app.py](https://github.com/GLORYERS/se_midterm/blob/main/test_app.py)
+
+![image](./image/t.jpg)
+
 
 ## 參考資料
 1.https://pythonprogramming.net/server-chatroom-sockets-tutorial-python-3/
@@ -47,6 +53,3 @@
 5.https://clay-atlas.com/blog/2019/10/15/python-chinese-tutorial-socket-tcp-ip/
 
 6.https://codertw.com/程式語言/374180/
-
-<!-- Testing using pytest
-Test file: conftest.py, test_app.py -->
