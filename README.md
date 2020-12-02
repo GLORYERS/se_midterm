@@ -52,8 +52,8 @@ Test file: [conftest.py](https://github.com/GLORYERS/se_midterm/blob/main/confte
 
 5.https://www.w3schools.com/howto/howto_css_social_login.asp
 
-6.https://ithelp.ithome.com.tw/articles/10222132
+6.https://www.youtube.com/watch?v=ZvU57lTnNgo
 
-7.https://www.youtube.com/watch?v=ZvU57lTnNgo
+7.https://ithelp.ithome.com.tw/articles/10222132
 
 8.https://codertw.com/程式語言/374180/
