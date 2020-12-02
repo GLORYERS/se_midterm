@@ -16,9 +16,14 @@
                 placeholder="Start write your message~"></input>
         </form>
         <hr>
-        <div>
-            <ul id="message"></ul>
-        </div>
+        <table>
+            <tr bgcolor="#DBC8EA">
+                <td>{{ loop.index + pagination.skip }}</td>
+                <td>{{b.total}}</td>
+                <td>{{b.time}}</td>
+            </tr>
+        </table>
+        <ul class="pagination justify-content-center">{{ pagination.links }}</ul>
 
 </body>
 
