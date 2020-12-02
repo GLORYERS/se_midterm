@@ -8,10 +8,10 @@
 
 測試小幫手一枚
 
-## 登入
+## 登入畫面
 ![image](./image/login.jpg)
 
-## 註冊
+## 註冊畫面
 ![image](./image/signup.jpg)
 
 ### 資料庫
@@ -42,18 +42,18 @@ Test file: [conftest.py](https://github.com/GLORYERS/se_midterm/blob/main/confte
 除測試有測試小幫手,其餘皆一人完成
 
 ## 參考資料
-1.https://pythonprogramming.net/server-chatroom-sockets-tutorial-python-3/
+1.https://pythonprogramming.net/client-chatroom-sockets-tutorial-python-3/?completed=/server-chatroom-sockets-tutorial-python-3/
 
-2.https://pythonprogramming.net/client-chatroom-sockets-tutorial-python-3/?completed=/server-chatroom-sockets-tutorial-python-3/
+2.https://blog.techbridge.cc/2017/06/03/python-web-flask101-tutorial-introduction-and-environment-setup/
 
-3.https://blog.techbridge.cc/2017/06/03/python-web-flask101-tutorial-introduction-and-environment-setup/
+3.https://clay-atlas.com/blog/2019/10/15/python-chinese-tutorial-socket-tcp-ip/
 
-4.https://ithelp.ithome.com.tw/articles/10222132
+4.https://pythonprogramming.net/server-chatroom-sockets-tutorial-python-3/
 
-5.https://clay-atlas.com/blog/2019/10/15/python-chinese-tutorial-socket-tcp-ip/
+5.https://www.w3schools.com/howto/howto_css_social_login.asp
 
-6.https://codertw.com/程式語言/374180/
+6.https://ithelp.ithome.com.tw/articles/10222132
 
-7.https://www.w3schools.com/howto/howto_css_social_login.asp
+7.https://www.youtube.com/watch?v=ZvU57lTnNgo
 
-8.https://www.youtube.com/watch?v=ZvU57lTnNgo
+8.https://codertw.com/程式語言/374180/
