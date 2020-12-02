@@ -4,7 +4,7 @@ def test_hello(client):
     response = client.get('/hello')
     assert response.data == b'Hi'
 
-def test_register(client, app):
+def test_login(client, app):
     # login page
     assert client.get('/').status_code == 200
     # login test
