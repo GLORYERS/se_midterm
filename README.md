@@ -14,7 +14,7 @@
 ## 註冊
 ![image](./image/signup.jpg)
 
-## 資料庫
+### 資料庫
 ＊註冊的資料會傳入資料庫中
 
 ![image](./image/db.jpg)
@@ -31,9 +31,6 @@
 ![image](./image/c.jpg)
 ![image](./image/s.jpg)
 
-## 工作分配
-除測試有測試小幫手,其餘皆一人完成
-
 ## 測試
 Testing using pytest
 
@@ -41,6 +38,8 @@ Test file: [conftest.py](https://github.com/GLORYERS/se_midterm/blob/main/confte
 
 ![image](./image/t.jpg)
 
+## 工作分配
+除測試有測試小幫手,其餘皆一人完成
 
 ## 參考資料
 1.https://pythonprogramming.net/server-chatroom-sockets-tutorial-python-3/
