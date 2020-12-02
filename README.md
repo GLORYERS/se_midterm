@@ -1,8 +1,5 @@
 # 期中作業_聊天室
 
-## 專案網址
-[GLORYERS](https://github.com/GLORYERS/se_midterm)
-
 ## 組員
 110810535 張嘉芸
 
@@ -19,16 +16,22 @@
 
 ![image](./image/db.jpg)
 
-## 聊天室
+## 聊天室(http://127.0.0.1:5000/room)
 ![image](./image/message.jpg)
 ![image](./image/message2.jpg)
 ＊尚未完成網頁端的聊天室,期望完成能訊息刷新的畫面
 
 ## 專案畫面
+[GLORYERS](https://github.com/GLORYERS/se_midterm)
+
 ![image](./image/poject.jpg)
 
 ## 演算法
+*client
+
 ![image](./image/c.jpg)
+*sever
+
 ![image](./image/s.jpg)
 
 ## 測試

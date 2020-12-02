@@ -44,7 +44,7 @@ def homeoo():
     return render_template('signup.html')
 
 
-@app.route('/room')
+@app.route('/room', methods=['GET', 'POST'])
 def homeroo():
     return render_template('chatroom.html')
 
