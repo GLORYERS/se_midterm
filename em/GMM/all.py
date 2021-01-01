@@ -71,7 +71,7 @@ def plot(lis1):
     plt.grid()
     plt.show()
 
-
+# Initial State
 m1 = [1, 1]
 m2 = [7, 7]
 cov1 = [[3, 2], [2, 3]]
