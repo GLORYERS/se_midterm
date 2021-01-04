@@ -46,7 +46,7 @@ tail<sub>B</sub> = p<sub>B</sub> * 1 = 0.2<br>
 
 ## M step:
 
-Update θ<sub>A</sub> and θ<sub>B</sub> with the new values<br>
+Update θ<sub>A</sub> and θ<sub>B</sub> with the new values:<br>
 θ<sub>A</sub>' = 21.3/(21.3 + 8.6) = 0.71<br>
 θ<sub>B</sub>' = 11.7/(11.7 + 8.4) = 0.58
 
@@ -76,8 +76,6 @@ k = 執行k次的迴圈
 
 <img src='img/5.png' width='200'>
 <img src='img/4.jpg' width='180'>
-
-------------------------------------------------------------------------------------------------------------------
 
 ## 參考資料:
 
