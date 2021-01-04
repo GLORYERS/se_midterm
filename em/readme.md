@@ -27,6 +27,8 @@ M-Step是尋找似然函數最大化對應的參數，因每次迭代後似然�
 
 解決方法：先隨機初始化和，用去估計隱變數，然後基於隱變數按最大似然估計新的和直至收斂。
 
+----------------------------------------------------------------------------------
+
 ## E step:
 
 Current bias estimates:&nbsp;&nbsp;θ<sub>A</sub>=0.6,&nbsp;&nbsp;θ<sub>B</sub>=0.5
@@ -48,7 +50,9 @@ Update θ<sub>A</sub> and θ<sub>B</sub> with the new values<br>
 θ<sub>A</sub>' = 21.3/(21.3 + 8.6) = 0.71<br>
 θ<sub>B</sub>' = 11.7/(11.7 + 8.4) = 0.58
 
-* Do the E and M step until convergence.
+### Do the E and M step until convergence.
+
+<img src='img/3.png'>
 
 ## 複雜度:
 ```
@@ -64,16 +68,29 @@ k = 執行k次的迴圈
 ```
 ## 測試：
 
+<img src='img/2.png'>
+
+## 補充(高斯混合模型)：
+
+高斯混合模型是由多個常態分佈組合成的概率模型。
+
+<img src='img/5.png' width='200'>
+<img src='img/4.jpg' width='180'>
+
+------------------------------------------------------------------------------------------------------------------
+
 ## 參考資料:
 
 1. https://blog.pluskid.org/?p=81
 
 2. https://zhuanlan.zhihu.com/p/78311644
 
-3. https://www.zhihu.com/question/27976634
+3. https://zh.m.wikipedia.org/wiki/正态分布
 
-4. http://karlrosaen.com/ml/notebooks/em-coin-flips/
+4. https://www.zhihu.com/question/27976634
 
-5. https://medium.com/@prateek.shubham.94/expectation-maximization-algorithm-7a4d1b65ca55
+5. http://karlrosaen.com/ml/notebooks/em-coin-flips/
 
-6. A. P. Dempster; N. M. Laird; D. B. Rubin. "Maximum Likelihood from Incomplete Data via the EM Algorithm". Journal of the Royal Statistical Society.Series(Methodological), Vol. 39,No.1.(1977),pp.1–38. JSTOR 2984875. MR 0501537.
+6. https://medium.com/@prateek.shubham.94/expectation-maximization-algorithm-7a4d1b65ca55
+
+7. A. P. Dempster; N. M. Laird; D. B. Rubin. "Maximum Likelihood from Incomplete Data via the EM Algorithm". Journal of the Royal Statistical Society.Series(Methodological), Vol. 39,No.1.(1977),pp.1–38. JSTOR 2984875. MR 0501537.
