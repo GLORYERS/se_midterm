@@ -9,7 +9,7 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 usser = []
-inputm = []
+msg = []
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.db'
@@ -55,13 +55,17 @@ def homeoo():
 
 @app.route('/room', methods=['GET', 'POST'])
 def homeroo():
+    global msg
     if request.method == 'POST':
         i = request.form['inputm']
         ctime = str(getTime())
-        print(i)
-        return render_template('chatroom.html', msg=i, cTime=ctime)
+        row = {'msg': i, 'time': ctime}
+        msg.append(row)
+        _msg = msg
+        _msg.reverse()
+        return render_template('chatroom.html', msg=_msg)
     else:
-        return render_template('chatroom.html')
+        return render_template('chatroom.html', msg=msg)
 
 
 @app.route('/log', methods=['POST'])
