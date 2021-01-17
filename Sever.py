@@ -1,5 +1,6 @@
 import socket
 import select
+import time
 from flask import Flask
 from flask import render_template
 from flask import Flask, redirect, url_for
@@ -8,6 +9,7 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 usser = []
+inputm = []
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.db'
@@ -34,6 +36,13 @@ class user(db.Model):
     password = db.Column(db.Text, nullable=False)
 
 
+def getTime():
+    t = time.localtime()
+    timee = time.strftime("%m/%d/%Y, %H:%M:%S", t)
+    print(timee)
+    return timee
+
+
 @app.route('/')
 def home():
     return render_template('login.html')
@@ -46,7 +55,13 @@ def homeoo():
 
 @app.route('/room', methods=['GET', 'POST'])
 def homeroo():
-    return render_template('chatroom.html')
+    if request.method == 'POST':
+        i = request.form['inputm']
+        ctime = str(getTime())
+        print(i)
+        return render_template('chatroom.html', msg=i, cTime=ctime)
+    else:
+        return render_template('chatroom.html')
 
 
 @app.route('/log', methods=['POST'])
@@ -77,7 +92,6 @@ if __name__ == '__main__':
 
 HEADER_LENGTH = 10
 Host = "127.0.0.1"
-# Server IP
 Port = 8080
 
 
